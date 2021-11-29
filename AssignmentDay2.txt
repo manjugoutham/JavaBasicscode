@@ -1,0 +1,480 @@
+If Else Statement Problems:
+
+1. Read a single Digit Number and write in word
+
+package day2;
+
+import java.util.*;
+
+public class DigitWord {
+    public static void main(String[] args) {
+
+    Scanner scan=new Scanner(System.in);  
+    System.out.print("Enter the Digit Number: ");
+    
+    int x = scan.nextInt();
+    if (x == 0) {
+        System.out.println("Zero");
+    }
+    else if(x == 1){
+     System.out.println("One");
+    }
+    else if(x == 2){
+        System.out.println("Two");
+    }
+    else if(x == 3){
+        System.out.println("Three");
+    }
+    else if(x == 4){
+        System.out.println("Four");
+    }
+    else if(x == 5){
+        System.out.println("Five");
+    }
+    else if(x == 6){
+        System.out.println("Six");
+    }
+    else if(x == 7){
+        System.out.println("Seven");
+    }
+    else if(x == 8){
+        System.out.println("Eight");
+    }
+    else if(x == 9){
+        System.out.println("Nine");
+    }
+    else{
+        System.out.println("You entered Invalid input please try again");
+    }    
+    }
+}
+
+
+
+2. Read a Number 1,10,100,1000 and display unit, ten hundred
+
+
+package day2;
+
+import java.util.Scanner;
+
+public class Number {
+    public static void main(String[] args) {
+        
+        Scanner scan = new Scanner(System.in);
+        int n1, n2, n3, n4, n5;
+        System.out.println("Enter the number: ");
+        n1 = scan.nextInt();   
+        if (n1<=0 || n1>=10000) {
+            System.out.println("You entered Invalid number try again ");
+        } else {
+            n2 = n1%10;      //here printing the unit value 
+            n3 = n1%100/10; //here printing the tens value
+            n4 = n1%1000/100; //here printing the hundreds value
+            n5 = n1%10000/1000; //here printing the thousand value
+            System.out.println("The Number in Units place is : "+ n2);
+            System.out.println("The Number in Tens place is : "+ n3);
+            System.out.println("The Number in Hundreds place is : "+ n4);
+            System.out.println("The Number in Thousand place is : "+ n5);   
+        }
+    }
+}
+
+
+
+
+Programs With While Loop
+1. Write a Program for the sum of n natural numbers eg. Input N=5 output 1+2+3+4+5
+
+package day2;
+
+public class SumofNaturalNum
+{  
+public static void main(String[] args)   
+{  
+int num = 5, i = 1, sum = 0;  
+//executes until the condition returns true  
+while(i <= num)  
+{  
+//adding the value of i into sum variable  
+sum = sum + i;  
+//increments the value of i by 1  
+i++;  
+}  
+//prints the sum   
+System.out.println("Sum of First 100 Natural Numbers is = " + sum);  
+}  
+}  
+
+
+
+2. Write a Program to reverse the integer number eg. Input n=231 reverse is 132
+
+
+package day2;
+
+import java.util.Scanner;
+class Reverse
+{
+   public static void main(String args[])
+   {
+      int num=0;
+      int reversenum =0;
+      System.out.println("Input your number and press enter: ");
+      //This statement will capture the user input
+      Scanner in = new Scanner(System.in);
+      //Captured input would be stored in number num
+      num = in.nextInt();
+      //While Loop: Logic to find out the reverse number
+      while( num != 0 )
+      {
+          reversenum = reversenum * 10;
+          reversenum = reversenum + num%10;
+          num = num/10;
+      }
+
+      System.out.println("Reverse of input number is: "+reversenum);
+   }
+}
+
+
+
+Programs With For Loop
+1. Write a Program for the sum of n natural numbers eg. Input N=5 output 1+2+3+4+5
+
+package day2;
+
+public class ForSum 
+{  
+public static void main(String[] args)   
+{  
+int i, num = 5, sum = 0;  
+//executes until the condition returns true  
+for(i = 1; i <= num; ++i)  
+{  
+//adding the value of i into sum variable  
+sum = sum + i;  
+}  
+//prints the sum   
+System.out.println("Sum of First 10 Natural Numbers is = " + sum);  
+}  
+}  
+
+
+
+2. Write a Program to reverse the integer number eg. Input n=231 reverse is 132
+
+
+package day2;
+public class ForReverse   
+{  
+public static void main(String[] args)   
+{  
+int number = 231, rev = 0;  
+//we have not mentioned the initialization part of the for loop  
+for(;number !=0;)   
+{  
+int remainder = number % 10;  
+rev = rev * 10 + remainder;
+number=number/10;
+}  
+System.out.println("The reverse of the given number is: " + rev);  
+}  
+}
+
+
+
+
+3. Write a Program to find Palindrome Number
+eg. Input n=121 then after reverse output is same 121 then it is a palindrome.
+eg. Input n=321 then after reverse output is not same it's 123 then it is not a palindrome number.
+
+
+package day2;
+
+import java.util.*;   
+class PalindromeNum  
+{  
+   public static void main(String args[])  
+   {  
+      String original, reverse = ""; // Objects of String class  
+      Scanner in = new Scanner(System.in);   
+      System.out.println("Enter a string/number to check if it is a palindrome");  
+      original = in.nextLine();   
+      int length = original.length();   
+      for ( int i = length - 1; i >= 0; i-- )  
+         reverse = reverse + original.charAt(i);  
+      if (original.equals(reverse))  
+         System.out.println("Entered string/number is a palindrome.");  
+      else  
+         System.out.println("Entered string/number is not a palindrome.");   
+   }  
+}
+
+
+
+
+Programs with Switch Statement
+1. Write a Program to Check Vowel or Consonant
+
+package day2;
+
+import java.util.Scanner;
+class VowelorConsonant
+{
+   public static void main(String[ ] arg)
+   {
+	boolean isVowel=false;
+	Scanner scanner=new Scanner(System.in);
+	System.out.println("Enter a character : ");
+	char ch=scanner.next().charAt(0); 
+	scanner.close();
+	switch(ch)
+	{
+	   case 'a' :
+	   case 'e' :
+           case 'i' :
+	   case 'o' :
+	   case 'u' :
+	   case 'A' :
+	   case 'E' :
+	   case 'I' :
+	   case 'O' :
+	   case 'U' : isVowel = true;
+	}
+	if(isVowel == true) {
+	   System.out.println(ch+" is  a Vowel");
+	}
+	else {
+	   if((ch>='a'&&ch<='z')||(ch>='A'&&ch<='Z'))
+		System.out.println(ch+" is a Consonant");
+	   else
+		System.out.println("Input is not an alphabet");		
+        }
+   }
+}
+
+
+
+2. Write a Program to print the month name for the given number
+
+package day2;
+
+
+import javax.swing.JOptionPane;
+
+public class MonthName {
+
+   public static void main(String[] args) {
+
+    int num = Integer.parseInt (JOptionPane.showInputDialog ("Enter any number equal to or between 1-12 to display the month"));
+
+    switch (num)
+    {
+    case 1:
+        System.out.println ("The name of month number 1 is January");
+        break;
+    case 2:
+        System.out.println ("The name of month number 2 is February");
+        break;
+    case 3:
+        System.out.println ("The name of month number 3 is March");
+        break;
+    case 4:
+        System.out.println ("The name of month number 4 is April");
+        break;
+    case 5:
+        System.out.println ("The name of month number 5 is May");
+        break;
+    case 6:
+        System.out.println ("The name of month number 6 is June");
+        break;
+    case 7:
+        System.out.println ("The name of month number 7 is July");
+        break;
+    case 8:
+        System.out.println ("The name of month number 8 is August");
+        break;
+    case 9:
+        System.out.println ("The name of month number 9 is September");
+        break;
+    case 10:
+        System.out.println ("The name of month number 10 is October");
+        break;
+    case 11:
+        System.out.println ("The name of month number 11 is November");
+        break;
+    case 12:
+        System.out.println ("The name of month number 12 is December");
+        break;
+        default:
+            System.out.println ("You have entered an invalid number");
+        }
+    } // main method
+}
+
+
+Operator Programs
+1. Enter two numbers and do the following arithmetic Operations find max and min.
+i) a+b*c ii) c+a/b
+iii) a%b+c iV) a*b+c
+
+
+package day2;
+import java.util.Scanner;
+
+public class Operators {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        float a,b,c;
+        
+        System.out.println("Enter the First number: ");
+        a = sc.nextFloat();
+        System.out.println("Enter the Second number: ");
+        b = sc.nextFloat();
+        System.out.println("Enter the Third number: ");
+        c = sc.nextFloat();
+
+        float first = a+b*c;
+        float second = c+a/b;
+        float third = a%b+c;
+        float fourth = a*b+c;
+
+         System.out.println("Results:-");
+         System.out.println("First Operation is : "+first);           //1.(a+b*c)
+         System.out.println("Second Operation is : "+second);         //2.(c+a/b)
+         System.out.println("Third Operation is : "+third);           //3.(a%b+c)
+         System.out.println("fourth Operation is : "+fourth);          //4.(a*b+c)
+
+
+         float arr[]= {first,second,third,fourth};
+         float max = arr[0];
+         float min = arr[0];
+
+         for (int i = 1; i < arr.length; i++) {
+             if (arr[i]>max) {
+                 max=arr[i];
+            } 
+             else if (arr[i]<min){
+                 min=arr[i];
+            }
+             else{
+                System.out.println("Invaild number");
+            }
+        }
+         System.out.println("The maximum number is :"+ max);
+         System.out.println("The minimum number is :"+ min);
+    }
+}
+
+
+
+2. Write a program SpringSeason.java that takes two int values m and d from the command line and prints true if day d of month m is between March 20 (m = 3, d=20) and June 20 (m = 6, d = 20), false otherwise.
+
+package day2;
+
+import java.util.*;
+
+	public class SpringSeason {
+	    public static void main (String[] args){
+	  
+	      Scanner scan = new Scanner(System.in);
+	      int month;
+	      int day;
+	    
+	      System.out.print("Please enter month and day: ");
+	      month = scan.nextInt();
+	      day = scan.nextInt();
+	      if (month >= 3 && month <=6 && day>= 20) 
+	      {
+	            System.out.println("The given month and date is correct");
+	        } 
+	      else {
+	            System.out.println("The given month and date is not correct try again..?");
+	        }
+	     } 
+	  }
+
+3. Write a program Quadratic.java to find the roots of the equation a*x*x + b*x + c.
+Since the equation is x*x, hence there are 2 roots. The 2 roots of the equation can be found using a formula delta = b*b - 4*a*c
+Root 1 of x = (-b + sqrt(delta))/(2*a)
+Root 2 of x = (-b - sqrt(delta))/(2*a)
+Take a, b, and c as input values to find the roots of x.
+
+
+package day2;
+
+import java.util.Scanner;
+
+public class Quadratic {
+    public static void main(String[] args) {
+        Scanner scan =new Scanner(System.in);
+        
+        System.out.println("Enter the value of A: ");
+        Double a =scan.nextDouble();
+
+        System.out.println("Enter the value of B: ");
+        Double b =scan.nextDouble();
+
+        System.out.println("Enter the value of C: ");
+        Double c =scan.nextDouble();
+
+        Double root; 
+        Double root1;
+        Double Discriminate= b*b-4*a*c;
+        System.out.println("Roots are Discriminate: "+Discriminate);
+
+        if(Discriminate<0) 
+        {
+            System.out.println("Roots value imaginary");
+            root=0.0;
+            root1=0.0;
+            System.out.println("Root : "+ root);
+            System.out.println("Root1 : "+ root1);
+        }
+
+        else if(Discriminate==0) {
+        	System.out.println("Roots are equal.");
+            root = -b /(2*a);
+            root1 = -b /(2*a);
+            System.out.println("Root : "+ root);
+            System.out.println("Root1 : "+ root1);
+        }
+
+        else if (Discriminate>0) {
+        	System.out.println("Roots are not equal.");
+            root = (-b + Math.sqrt(Discriminate))/(2*a);
+            root1 = (-b - Math.sqrt(Discriminate))/(2*a);
+            System.out.println("Root : "+ root);
+            System.out.println("Root1 : "+ root1);
+        }
+    }
+}
+
+
+
+
+
+
+
+4. Write a program Distance.java that takes two integer command-line arguments x and y and prints the Euclidean distance from the point (x, y) to the origin (0, 0). The formulae to calculate distance = sqrt(x*x + y*y). Use Math.power function
+
+
+
+package day2;
+
+public class Distance
+{
+	public static void main(String args[]){ 
+        long x1,x2,y1,y2;
+		double distance;
+ 
+                x1=Long.parseLong(args[0]);
+                y1=Long.parseLong(args[1]);
+	        x2=Long.parseLong(args[2]);
+                y2=Long.parseLong(args[3]); 
+		     
+	        distance=Math.sqrt((x2-x1)*(x2-x1) + (y2-y1)*(y2-y1));
+  	        System.out.println("distancebtn"+"("+x1+","+y1+"),"+"("+x2+","+y2+")===>"+distance);
+	}
+}
